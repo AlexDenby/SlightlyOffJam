@@ -17,10 +17,17 @@ public class CameraController : MonoBehaviour {
 
 	// Update is called once per frame
 	void LateUpdate () {
-		float xOff = Random.value;
-		float yOff = Random.value;
-		float zOff = Random.value;
-		Vector3 slightlyOffset = new Vector3(xOff/10,yOff/10,zOff/10);
-		transform.position = player.transform.position + offset + slightlyOffset;		
+		float xOff = 0;
+		float yOff = 0;
+		float zOff = 0;
+		if (whoaThere == 60) {
+			xOff = Random.value;
+			yOff = Random.value;
+			zOff = Random.value;
+			whoaThere = 0;
+		}
+		Vector3 slightlyOffset = new Vector3(xOff,yOff,zOff);
+		transform.position = player.transform.position + offset + slightlyOffset;
+		whoaThere++;
 	}
 }
