@@ -9,10 +9,12 @@ public class CameraController : MonoBehaviour {
 	private Vector3 offset;
 	private Vector3 slightlyOffset;
 	private int whoaThere = 1;
+	private Vector3 zoomVector;
 
 	// Use this for initialization
 	void Start () {
 		offset = transform.position - player.transform.position;
+		zoomVector = Vector3.MoveTowards (transform.position, player.transform.position, 1.0f);
 	}
 
 	// Update is called once per frame
@@ -27,7 +29,7 @@ public class CameraController : MonoBehaviour {
 			whoaThere = 0;
 		}
 		Vector3 slightlyOffset = new Vector3(xOff,yOff,zOff);
-		transform.position = player.transform.position + offset + slightlyOffset;
+		transform.position = player.transform.position + offset + slightlyOffset + zoomVector;
 		whoaThere++;
 	}
 }
