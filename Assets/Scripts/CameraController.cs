@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour {
 
 	public float zoomSpeed = 0.01f;
 
+	public float rotationSpeed = 0.01f;
+
 	// Use this for initialization
 	void Start () {
 		offset = transform.position - player.transform.position;
@@ -40,6 +42,13 @@ public class CameraController : MonoBehaviour {
 					transform.position + offset, -zoomSpeed);
 		}
 		offset = transform.position - player.transform.position;
+
+		/*
+		// rotate around the player in a circle
+		//transform.RotateAround(player.transform.position, Vector3.up, rotationSpeed);
+		transform.position += new Vector3(1f, 0, 0);
+		transform.LookAt(player.transform.position);
+		*/
 
 		// make sure this is after offset is calculated
 		transform.position += slightlyOffset;
