@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour {
 	private Vector3 slightlyOffset;
 	private int whoaThere = 1;
 
+	public float zoomSpeed = 0.01f;
+
 	// Use this for initialization
 	void Start () {
 		offset = transform.position - player.transform.position;
@@ -17,7 +19,7 @@ public class CameraController : MonoBehaviour {
 
 	// Update is called once per frame
 	void LateUpdate () {
-		float xOff = 0;
+		/*float xOff = 0;
 		float yOff = 0;
 		float zOff = 0;
 		if (whoaThere == 60) {
@@ -27,11 +29,16 @@ public class CameraController : MonoBehaviour {
 			whoaThere = 0;
 		}
 		Vector3 slightlyOffset = new Vector3(xOff,yOff,zOff);
-		whoaThere++;
-
+		transform.position = player.transform.position + offset + slightlyOffset;
+		whoaThere++;*/
 		transform.position = player.transform.position + offset;
-		transform.position = Vector3.MoveTowards(transform.position,
-				player.transform.position, 0.01f) + slightlyOffset;
-		offset = transform.position - player.transform.position - slightlyOffset;
+		if (zoomSpeed > 0) {
+			transform.position = Vector3.MoveTowards(transform.position,
+					player.transform.position, zoomSpeed);
+		} else {
+			transform.position = Vector3.MoveTowards(transform.position,
+					transform.position + offset, -zoomSpeed);
+		}
+		offset = transform.position - player.transform.position;
 	}
 }
