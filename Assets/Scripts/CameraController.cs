@@ -12,12 +12,12 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		offset = transform.position - player.transform.position;
 	}
 
 	// Update is called once per frame
 	void LateUpdate () {
-		/*float xOff = 0;
+		float xOff = 0;
 		float yOff = 0;
 		float zOff = 0;
 		if (whoaThere == 60) {
@@ -27,11 +27,11 @@ public class CameraController : MonoBehaviour {
 			whoaThere = 0;
 		}
 		Vector3 slightlyOffset = new Vector3(xOff,yOff,zOff);
-		transform.position = player.transform.position + offset + slightlyOffset;
-		whoaThere++;*/
-		offset = transform.position - player.transform.position;
+		whoaThere++;
+
 		transform.position = player.transform.position + offset;
 		transform.position = Vector3.MoveTowards(transform.position,
-				player.transform.position, 0.01f);
+				player.transform.position, 0.01f) + slightlyOffset;
+		offset = transform.position - player.transform.position - slightlyOffset;
 	}
 }
