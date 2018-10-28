@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.5645232, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2908,6 +2908,40 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1d0b6b94c9b362c4fb71e00c6b2c2ccf, type: 2}
+    - target: {fileID: 4450491924054266, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450491924054266, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450491924054266, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450491924054266, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450491924054266, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450491924054266, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114182230351440280, guid: f4eb55665ee54a24ca10c799cacbdba1,
+        type: 2}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 54247331561693182, guid: f4eb55665ee54a24ca10c799cacbdba1,
+        type: 2}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4eb55665ee54a24ca10c799cacbdba1, type: 2}
   m_IsPrefabAsset: 0
