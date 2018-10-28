@@ -18,10 +18,17 @@ public class HoldInPosition : MonoBehaviour {
 		transform.position = new Vector3(player.transform.position.x + offset.x, transform.position.y, player.transform.position.z + offset.z);	
 		float horizDelta = Input.GetAxis("Mouse X");
 
-		if (Math.Abs(horizDelta) > 0.1f) {
-			transform.RotateAround(player.transform.position, Vector3.up, 10 * Math.Sign(horizDelta));
+		if (Input.GetKey(KeyCode.LeftBracket)) {
+			transform.RotateAround(player.transform.position, Vector3.up, -2);
+			offset = transform.position - player.transform.position;
+		} else if (Input.GetKey(KeyCode.RightBracket)) {
+			transform.RotateAround(player.transform.position, Vector3.up, 2);
 			offset = transform.position - player.transform.position;
 		}
+		/*if (Math.Abs(horizDelta) > mouseMoveThreshold) {
+		  transform.RotateAround(player.transform.position, Vector3.up, 10 * Math.Sign(horizDelta));
+			offset = transform.position - player.transform.position;
+		}*/
 		/*if (Input.GetKey(KeyCode.LeftBracket)) {
 			transform.RotateAround(player.transform.position, Vector3.up, -2);
 			offset = transform.position - player.transform.position;
