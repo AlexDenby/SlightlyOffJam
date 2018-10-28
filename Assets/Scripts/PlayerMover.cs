@@ -20,8 +20,23 @@ public class PlayerMover : MonoBehaviour {
 
 
 	void FixedUpdate() {
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
+		float moveHorizontal;
+	   	if (Input.GetKey(KeyCode.A)) {
+			moveHorizontal = -1.0f;
+		} else if (Input.GetKey(KeyCode.D)) {
+			moveHorizontal = 1.0f;
+		} else {
+			moveHorizontal = 0.0f;
+		}
+
+		float moveVertical;
+		if (Input.GetKey(KeyCode.W)) {
+			moveVertical = 1.0f;
+		} else if (Input.GetKey(KeyCode.S)) {
+			moveVertical = -1.0f;
+		} else {
+			moveVertical = 0.0f;
+		}
 
 		//Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 		
