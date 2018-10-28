@@ -19,15 +19,23 @@ public class EventFlagSystem : MonoBehaviour {
 	public Flag[] flags_internal = new Flag[NUM_FLAGS];
 
 	public void SetFlag(int flagNum) {
+		if (flags[flagNum].status == true) {
+			return;
+		}
 		flags[flagNum].status = true;
 		flags_internal[flagNum].status = true;
 		flagNumToOnSetEvents[flagNum].Invoke();
+		Debug.Log("flag num " + flagNum + " set");
 	}
 
 	public void ClearFlag(int flagNum) {
+		if (!flags[flagNum].status) {
+			return;
+		}
 		flags[flagNum].status = false;
 		flags_internal[flagNum].status = false;
 		flagNumToOnClearEvents[flagNum].Invoke();
+		Debug.Log("flag num " + flagNum + " clear");
 	}
 
 	public bool FlagStatus(int flagNum) {

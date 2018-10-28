@@ -9,7 +9,7 @@ public class ActiveOnSetInactiveOnClear : MonoBehaviour {
 		this.gameObject.SetActive(true);
 	}
 
-	public void OnClear() {
+	public void OnFlagClear() {
 		this.gameObject.SetActive(false);
 	}
 }
