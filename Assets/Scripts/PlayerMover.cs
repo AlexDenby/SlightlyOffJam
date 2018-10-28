@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,16 +7,15 @@ using UnityEngine.UI;
 public class PlayerMover : MonoBehaviour {
 
 	public float speed;
-	public Text countText;
 
 	private Rigidbody rb;
-	private int count;
+
+	private GameObject camera;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		count = 0;
-		countText.text = "Count: " + count.ToString ();
+		camera = GameObject.Find("Main Camera");
 	}
 
 
@@ -23,17 +23,25 @@ public class PlayerMover : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		//Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		
+		Transform camTransform = camera.transform;
 
-		rb.AddForce (movement*speed);
+		Vector3 moveDirection = new Vector3();
+		moveDirection += camera.transform.right * moveHorizontal;
+		moveDirection += camera.transform.forward * moveVertical;
+		moveDirection.y = 0;
+
+		/*if(moveDirection != Vector3.zero)
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(moveDirection), speed);*/
+
+		rb.AddForce (moveDirection.normalized*speed);
 
 	}
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("Trigger")) {
 			other.gameObject.SetActive (false);
-			count = count + 1;
-			countText.text = "Count: " + count.ToString ();
 		}
 	}
 }
