@@ -43,7 +43,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[1].mute = false;
 
-		srcs[1].Play();
+		//srcs[1].Play();
 		currSong = 1;
 	}
 
@@ -54,7 +54,7 @@ public class MusicManager : MonoBehaviour {
 		srcs[currSong].mute = true;
 
 		srcs[2].mute = false;
-		srcs[2].Play();
+		//srcs[2].Play();
 
 		currSong = 2;
 	}
@@ -67,7 +67,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[3].mute = false;
 
-		srcs[3].Play();
+		//srcs[3].Play();
 		currSong = 3;
 	}
 
@@ -79,7 +79,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[4].mute = false;
 
-		srcs[4].Play();
+		//srcs[4].Play();
 		currSong = 4;
 	}
 
@@ -91,7 +91,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[5].mute = false;
 
-		srcs[5].Play();
+		//srcs[5].Play();
 		currSong = 5;
 	}
 
@@ -103,7 +103,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[6].mute = false;
 
-		srcs[6].Play();
+		//srcs[6].Play();
 		currSong = 6;
 	}
 
@@ -115,7 +115,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[7].mute = false;
 
-		srcs[7].Play();
+		//srcs[7].Play();
 		currSong = 7;
 	}
 
@@ -127,7 +127,7 @@ public class MusicManager : MonoBehaviour {
 
 		srcs[8].mute = false;
 
-		srcs[8].Play();
+		//srcs[8].Play();
 		currSong = 8;
 	}
 }
